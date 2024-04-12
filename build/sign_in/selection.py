@@ -47,7 +47,7 @@ class SelectionApp:
 
     def open_decryption_screen(self):
         main_window = tk.Toplevel(self.root)
-        main_window.geometry("812x350")
+        main_window.geometry("1280x720")
         decryption_screen = DecryptionButton(main_window)
 
     def run(self):
