@@ -80,7 +80,7 @@ class DecryptionButton(tk.Toplevel):
 
 def main_screen():
     screen = Tk()
-    screen.geometry("812x350")
+    screen.geometry("1280x720")
     screen.title("Decryption")
 
     decryption_button = DecryptionButton(screen)

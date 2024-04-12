@@ -9,7 +9,7 @@ class EncryptionButton(tk.Toplevel):
     def __init__(self, main_window):
         self.main_window = main_window
         self.main_window.title("Encryption")
-        self.main_window.geometry("300x300")
+        self.main_window.geometry("1280x720")
 
         self.main_frame = Frame(self.main_window)
         self.main_frame.pack(fill=BOTH, expand=True, padx=10, pady=10)
