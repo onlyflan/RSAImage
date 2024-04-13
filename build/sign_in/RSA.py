@@ -159,6 +159,7 @@ def encryption_image(image):
     # imgfile = Image.open(image_path)
     imgfile = Image.open(image)
     file_name = Path(image).stem
+    extension = Path(image).suffix
     col,row = imgfile.size
     pixels = imgfile.load()
     
@@ -214,7 +215,7 @@ def encryption_image(image):
     img1.save(encrypted_path)
     key_path = f"C:/Users/Public/IMG/{file_name}_key.txt"
     with open(key_path, 'w') as f:
-        f.write(f"N:{N},Public Key E:{E},Private key D:{D}")
+        f.write(f"N:{N},Public Key E:{E},Private key D:{D},Extension:{extension}")
     print("Khóa đã được ghi ra file:", key_path)
 
     return key_path
@@ -238,6 +239,15 @@ def decryption_image(n, d, image, filename):
     # n = int(input("Nhập giá trị của N: "))
     # d = int(input("Nhập giá trị của D: "))
     # img = Image.open(encrypted_path)
+
+    key_filename = image.replace("_encrypted.bmp", "_key.txt")
+    print(key_filename)
+    with open(key_filename, 'r') as f:
+        key_info = f.read()
+    
+    extension_line = [line for line in key_info.split(",") if line.startswith("Extension:")][0]
+    extension = extension_line.split(":")[1]
+
     imgfile = Image.open(image)
     pixels = imgfile.load()
     ## Lấy ra cột và dòng của mảng cần được giải mã.
@@ -263,7 +273,7 @@ def decryption_image(n, d, image, filename):
 
     decrypted_filename = filename.replace("_encrypted", "")
     # extension = Path(image).suffix
-    decrypted_path = f"C:/Users/Public/IMG/{decrypted_filename}_decrypted.jpg"
+    decrypted_path = f"C:/Users/Public/IMG/{decrypted_filename}_decrypted{extension}"
     # decrypted_path = f"C:/Users/Public/IMG/decrypted_{filename}.jpg"
     # img3.save(decrypted_path)
     img3.save(decrypted_path)

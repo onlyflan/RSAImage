@@ -1,3 +1,3 @@
-import signInUI
+from signInUI import login
 
-signInUI.login()
+login()

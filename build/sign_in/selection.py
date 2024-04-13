@@ -9,10 +9,8 @@ class SelectionApp:
         self.root.geometry("250x200")
         self.root.title("RSA Image Encryption/Decryption")
 
-        # Set a custom background color for the main window
         self.root.configure(bg="#f2f2f2")
 
-        # Create and place buttons for encryption and decryption
         self.encrypt_button = Button(
             self.root,
             text="MÃ HÓA",
@@ -47,7 +45,7 @@ class SelectionApp:
 
     def open_decryption_screen(self):
         main_window = tk.Toplevel(self.root)
-        main_window.geometry("1280x720")
+        main_window.geometry("812x350")
         decryption_screen = DecryptionButton(main_window)
 
     def run(self):

@@ -4,7 +4,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, messagebox
 import selection
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"..\assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"..\assets\signin")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -140,7 +140,6 @@ canvas.create_text(
     fill="#FFFFFF",
     font=("IstokWeb Bold", 45 * -1)
 )
-
 
 # button_image_2 = PhotoImage(
 #     file=relative_to_assets("button_2.png"))
